@@ -2,6 +2,7 @@ services:
   - type: web
     name: bill-splitter
     env: python
+    pythonVersion: "3.11.9"
     buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
     startCommand: "gunicorn bill_split.wsgi:application"
     envVars:
