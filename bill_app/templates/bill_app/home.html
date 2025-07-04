@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>HOME BILL APP</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<div class="container">
+    <h1>Imparte nota de plata</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <button type="submit">Calculeaza</button>
+    </form>
+
+    {% if result %}
+        <div class="alert">
+            <h2>Rezultat:</h2>
+            <p>Bacsis: {{result.tip_amount}} lei</p>
+            <p>Total cu bacsis: {{result.total_with_tip}} lei</p>
+            <p>Pe persoana: {{result.per_person}} lei</p>
+        </div>
+    {% endif %}
+    
+
+</div>
+</html>
+

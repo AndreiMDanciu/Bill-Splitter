@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: split-bill-app
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn bill_split.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: bill_split.settings
+      - key: PYTHON_VERSION
+        value: "3.11"
