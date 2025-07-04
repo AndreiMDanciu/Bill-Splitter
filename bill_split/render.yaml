@@ -10,4 +10,6 @@ services:
       - key: SECRET_KEY
         value: django-insecure-592ti8b3@%34-)w$ul=9(yuou3cb$91(7c)=w*bz)ewngww%#1
       - key: DEBUG
-        value: False
+        value: "False"
+      - key: RENDER
+        value: "True"
